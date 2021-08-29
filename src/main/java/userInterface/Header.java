@@ -18,9 +18,9 @@ import standardComponents.MyButton;
  */
 public final class Header extends JPanel {
 
-    private static final String RESTART_ICON_PATH = "src/resources/restartWhite.png";
-    private static final String PAUSE_ICON_PATH = "src/resources/pauseWhite.png";
-    private static final String RESUME_ICON_PATH = "src/resources/resumeWhite.png";
+    private static final String RESTART_ICON_PATH = "src/main/resources/restart.png";
+    private static final String PAUSE_ICON_PATH = "src/main/resources/pause.png";
+    private static final String RESUME_ICON_PATH = "src/main/resources/resume.png";
 
     private final TetrisGame game;
     private final JPanel right = new JPanel();

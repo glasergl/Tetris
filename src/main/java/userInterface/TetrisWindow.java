@@ -15,7 +15,7 @@ import standardComponents.Colors;
  */
 public final class TetrisWindow extends JFrame {
 
-    private static final String ICON_PATH = "src/resources/Icon.png";
+    private static final String ICON_PATH = "src/main/resources/Icon.png";
     private static final int SEPERATOR_THICKNESS = 3;
     private final StatTracker stats = new StatTracker();
     private final TetrisGame game = new TetrisGame(this);
