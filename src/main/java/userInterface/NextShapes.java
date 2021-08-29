@@ -44,7 +44,7 @@ public final class NextShapes extends JPanel {
 	setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 	visualisedNextShapes.setLayout(new BoxLayout(visualisedNextShapes, BoxLayout.Y_AXIS));
 	visualisedNextShapes.add(title);
-	title.setFont(Fonts.HEADLINE);
+	//title.setFont(Fonts.HEADLINE);
 	visualisedNextShapes.add(Box.createVerticalStrut(DISTANCE_BETWEEN_TITLE_AND_NEXT_SHAPES));
 	for (int i = 0; i < NUMBER_OF_NEXT_SHAPES; i++) {
 	    addRandomTetrisShape();

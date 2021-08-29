@@ -2,7 +2,6 @@ package userInterface;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import standardComponents.Colors;
@@ -15,7 +14,7 @@ import standardComponents.Colors;
  */
 public final class TetrisWindow extends JFrame {
 
-    private static final String ICON_PATH = "src/main/resources/Icon.png";
+    private static final String ICON_PATH = ClassLoader.getSystemResource("Icon.png").getPath();
     private static final int SEPERATOR_THICKNESS = 3;
     private final StatTracker stats = new StatTracker();
     private final TetrisGame game = new TetrisGame(this);
@@ -51,7 +50,6 @@ public final class TetrisWindow extends JFrame {
 
     private void setup() {
 	setLayout(new BorderLayout(SEPERATOR_THICKNESS, SEPERATOR_THICKNESS));
-	setIconImage(new ImageIcon(ICON_PATH).getImage());
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	setResizable(false);
 	designTetrisComponents();
