@@ -4,6 +4,6 @@
 	<jar>target\TetrisUI-0.0.1-SNAPSHOT-jar-with-dependencies.jar</jar>
 	<outfile>..\..\output\Tetris.exe</outfile>
 	<jre>
-		<minVersion>1.8.9_301</minVersion>
+		<path>%PATH%</path>
 	</jre>
 </launch4jConfig>
