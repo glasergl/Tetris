@@ -13,8 +13,6 @@ import standardComponents.Colors;
  * @version 27.08.2021
  */
 public final class TetrisWindow extends JFrame {
-
-	private static final String ICON_PATH = ClassLoader.getSystemResource("Icon.png").getPath();
 	private static final int SEPERATOR_THICKNESS = 3;
 	private final StatTracker stats = new StatTracker();
 	private final TetrisGame game = new TetrisGame(this);
@@ -50,6 +48,7 @@ public final class TetrisWindow extends JFrame {
 	}
 
 	private void setup() {
+		setIconImage(Images.TETRIS_ICON);
 		setLayout(new BorderLayout(SEPERATOR_THICKNESS, SEPERATOR_THICKNESS));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);

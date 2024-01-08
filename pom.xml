@@ -57,7 +57,7 @@
 					<headerType>gui</headerType>
 					<jar>${project.build.directory}${file.separator}${project.build.finalName}-jar-with-dependencies.jar</jar>
 					<outfile>${project.build.directory}${file.separator}${project.artifactId}.exe</outfile>
-					<!--icon>${project.basedir}${file.separator}src${file.separator}main${file.separator}resources${file.separator}Exe_Icon.ico</icon-->
+					<icon>${project.basedir}${file.separator}src${file.separator}main${file.separator}resources${file.separator}Tetris_Icon.ico</icon>
 					<jre>
 						<minVersion>17</minVersion>
 						<path>%PATH%</path>
