@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<launch4jConfig>
-	<headerType>gui</headerType>
-	<jar>target\TetrisUI-0.0.1-SNAPSHOT-jar-with-dependencies.jar</jar>
-	<outfile>..\..\output\Tetris.exe</outfile>
-	<jre>
-		<path>%PATH%</path>
-	</jre>
-</launch4jConfig>

@@ -10,6 +10,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<!-->launch4j<-->
+	<organization>
+		<name>Gabriel Glaser</name>
+	</organization>
+	<inceptionYear>2024</inceptionYear>
+	<description>Java implementation of Tetris.</description>
+
 	<dependencies>
 		<dependency>
 			<groupId>glasergl</groupId>
@@ -38,6 +45,33 @@
 						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.akathist.maven.plugins.launch4j</groupId>
+				<artifactId>launch4j-maven-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<headerType>gui</headerType>
+					<jar>${project.build.directory}${file.separator}${project.build.finalName}-jar-with-dependencies.jar</jar>
+					<outfile>${project.build.directory}${file.separator}${project.artifactId}.exe</outfile>
+					<!--icon>${project.basedir}${file.separator}src${file.separator}main${file.separator}resources${file.separator}Exe_Icon.ico</icon-->
+					<jre>
+						<minVersion>17</minVersion>
+						<path>%PATH%</path>
+					</jre>
+					<versionInfo>
+						<language>ENGLISH_UK</language>
+					</versionInfo>
+				</configuration>
+				<executions>
+					<execution>
+						<id>launch4j</id>
+						<phase>package</phase>
+						<goals>
+							<goal>launch4j</goal>
 						</goals>
 					</execution>
 				</executions>
