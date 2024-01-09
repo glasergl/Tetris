@@ -15,7 +15,6 @@ import standardComponents.CustomizedSwing;
  * TetrisGame.
  *
  * @author Gabriel Glaser
- * @version 27.08.2021
  */
 public final class Header extends JPanel {
 	private final TetrisGame game;

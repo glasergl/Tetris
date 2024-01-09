@@ -18,7 +18,6 @@ import standardComponents.MyLabel;
  * TetrisGame.
  *
  * @author Gabriel Glaser
- * @version 27.08.2021
  */
 public final class StatTracker extends JPanel {
 

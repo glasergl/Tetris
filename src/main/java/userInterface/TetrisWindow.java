@@ -10,7 +10,6 @@ import standardComponents.Colors;
  * Frame to contain all components to play Tetris.
  *
  * @author Gabriel Glaser
- * @version 27.08.2021
  */
 public final class TetrisWindow extends JFrame {
 	private static final int SEPERATOR_THICKNESS = 3;

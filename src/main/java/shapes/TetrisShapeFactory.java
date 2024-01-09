@@ -9,7 +9,6 @@ import userInterface.TetrisGame;
  * Class to create random TetrisShapes.
  *
  * @author Gabriel Glaser
- * @version 24.08.2021
  */
 public final class TetrisShapeFactory {
 

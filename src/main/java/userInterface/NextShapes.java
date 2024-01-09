@@ -22,7 +22,6 @@ import standardComponents.MyLabel;
  * removed, a random TetrisShape is added.
  * 
  * @author Gabriel Glaser
- * @version 28.08.2021
  */
 public final class NextShapes extends JPanel {
 

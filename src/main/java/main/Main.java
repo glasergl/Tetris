@@ -7,7 +7,6 @@ import userInterface.TetrisWindow;
  * Entry class for Tetris.
  *
  * @author Gabriel Glaser
- * @version 24.08.2021
  */
 public final class Main {
 

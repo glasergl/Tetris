@@ -10,7 +10,6 @@ import userInterface.TetrisGame;
  * Parent-class of all TetrisShapes.
  * 
  * @author Gabriel Glaser
- * @version 12.07.2021
  */
 public abstract class TetrisShape {
 
