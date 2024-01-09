@@ -5,12 +5,10 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+
+import javax.swing.JButton;
 import javax.swing.JPanel;
-import standardComponents.Colors;
-import standardComponents.Fonts;
-import standardComponents.MyButton;
+import standardComponents.CustomizedSwing;
 
 /**
  * Header of the TetrisWindow which contains JComponents to control the
@@ -20,15 +18,10 @@ import standardComponents.MyButton;
  * @version 27.08.2021
  */
 public final class Header extends JPanel {
-
-	private static final String RESTART_ICON_PATH = ClassLoader.getSystemResource("restart.png").getPath();
-	private static final String PAUSE_ICON_PATH = ClassLoader.getSystemResource("pause.png").getPath();
-	private static final String RESUME_ICON_PATH = ClassLoader.getSystemResource("resume.png").getPath();
-
 	private final TetrisGame game;
 	private final JPanel right = new JPanel();
-	private final MyButton restart = new MyButton("Restart");
-	private final MyButton pauseAndResume = new MyButton("Pause");
+	private final JButton restart = CustomizedSwing.getJButton(Images.RESTART_ICON);
+	private final JButton pauseAndResume = CustomizedSwing.getJButton(Images.PAUSE_ICON);
 	private boolean isPaused = false;
 
 	public Header(final TetrisGame game) {
@@ -39,19 +32,9 @@ public final class Header extends JPanel {
 	}
 
 	private void setupComponents() {
-		setupButtons();
-		setupContainer();
-	}
-
-	private void setupButtons() {
 		restart.addActionListener(new Restart());
 		pauseAndResume.addActionListener(new PauseAndResume());
-		restart.setFont(Fonts.HEADLINE);
-		pauseAndResume.setFont(Fonts.HEADLINE);
-		restart.setForeground(Colors.STANDARD_FOREGROUND);
-		pauseAndResume.setForeground(Colors.STANDARD_FOREGROUND);
-		restart.addMouseListener(new HoverEffect(restart));
-		pauseAndResume.addMouseListener(new HoverEffect(pauseAndResume));
+		setupContainer();
 	}
 
 	private void setupContainer() {
@@ -72,68 +55,29 @@ public final class Header extends JPanel {
 	}
 
 	private class Restart implements ActionListener {
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			game.restart();
 			game.requestFocus();
 			game.pause();
 			isPaused = true;
-			pauseAndResume.setText("Resume");
-
+			pauseAndResume.setIcon(Images.RESUME_ICON);
 		}
 
 	}
 
 	private class PauseAndResume implements ActionListener {
-
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (isPaused) {
-				pauseAndResume.setText("Pause");
+				pauseAndResume.setIcon(Images.PAUSE_ICON);
 				game.resume();
 			} else {
-				pauseAndResume.setText("Resume");
+				pauseAndResume.setIcon(Images.RESUME_ICON);
 				game.pause();
 			}
 			isPaused = !isPaused;
 			game.requestFocus();
 		}
-
 	}
-
-	private class HoverEffect implements MouseListener {
-
-		private final MyButton toListenOn;
-		private final Color storedBackground;
-
-		public HoverEffect(final MyButton toListenOn) {
-			this.toListenOn = toListenOn;
-			this.storedBackground = toListenOn.getForeground();
-		}
-
-		@Override
-		public void mouseClicked(MouseEvent e) {
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			toListenOn.setForeground(storedBackground.darker());
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			toListenOn.setForeground(storedBackground);
-		}
-
-	}
-
 }
