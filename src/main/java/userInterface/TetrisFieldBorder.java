@@ -10,8 +10,10 @@ import java.awt.Polygon;
 import java.awt.RenderingHints;
 import javax.swing.border.AbstractBorder;
 
+/**
+ * @author Someone from StackOverflow
+ */
 public class TetrisFieldBorder extends AbstractBorder {
-
 	private final Color top, right, bottom, left, line;
 	private final int borderWidth;
 
@@ -91,5 +93,4 @@ public class TetrisFieldBorder extends AbstractBorder {
 		}
 		return polygon;
 	}
-
 }

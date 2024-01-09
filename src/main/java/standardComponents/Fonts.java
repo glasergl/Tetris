@@ -3,6 +3,9 @@ package standardComponents;
 import java.awt.Font;
 import javax.swing.plaf.FontUIResource;
 
+/**
+ * @author Gabriel Glaser
+ */
 public class Fonts {
 
 	public static final Font HEADLINE = new FontUIResource(Font.MONOSPACED, Font.BOLD, 35);

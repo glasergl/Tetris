@@ -2,6 +2,9 @@ package standardComponents;
 
 import java.awt.Color;
 
+/**
+ * @author Gabriel Glaser
+ */
 public final class Colors {
 	public static final Color STANDARD_FOREGROUND = Color.WHITE;
 	public static final Color TETRIS_BACKGROUND = Color.BLACK;

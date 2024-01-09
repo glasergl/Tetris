@@ -3,6 +3,9 @@ package shapes;
 import java.util.Objects;
 import userInterface.TetrisGame;
 
+/**
+ * @author Gabriel Glaser
+ */
 public final class TetrisLocation {
 
 	private final int row;

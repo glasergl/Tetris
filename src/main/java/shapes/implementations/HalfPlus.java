@@ -8,6 +8,9 @@ import shapes.TetrisLocation;
 import shapes.TetrisShape;
 import userInterface.TetrisGame;
 
+/**
+ * @author Gabriel Glaser
+ */
 public final class HalfPlus extends TetrisShape {
 
 	public HalfPlus(final TetrisGame whereThisShouldSpawn, final Color ofThis, final TetrisLocation start,

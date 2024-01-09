@@ -4,6 +4,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import shapes.TetrisShape;
 
+/**
+ * @author Gabriel Glaser
+ */
 public class TetrisShapeMoveListener implements KeyListener {
 
 	private final TetrisShape toListenTo;

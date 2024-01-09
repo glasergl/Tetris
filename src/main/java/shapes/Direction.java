@@ -1,5 +1,8 @@
 package shapes;
 
+/**
+ * @author Gabriel Glaser
+ */
 public enum Direction {
 	NORTH, EAST, SOUTH, WEST;
 

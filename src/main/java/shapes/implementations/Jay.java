@@ -8,6 +8,9 @@ import shapes.TetrisLocation;
 import shapes.TetrisShape;
 import userInterface.TetrisGame;
 
+/**
+ * @author Gabriel Glaser
+ */
 public class Jay extends TetrisShape {
 
 	public Jay(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start, Direction facingFirst) {

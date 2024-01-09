@@ -11,6 +11,9 @@ import shapes.TetrisLocation;
 import shapes.TetrisShape;
 import standardComponents.Colors;
 
+/**
+ * @author Gabriel Glaser
+ */
 public final class TetrisGame extends JPanel {
 
 	public static final int NUMBER_OF_ROWS = 20;

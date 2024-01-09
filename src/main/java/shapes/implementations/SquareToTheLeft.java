@@ -8,6 +8,9 @@ import shapes.TetrisLocation;
 import shapes.TetrisShape;
 import userInterface.TetrisGame;
 
+/**
+ * @author Gabriel Glaser
+ */
 public final class SquareToTheLeft extends TetrisShape {
 
 	public SquareToTheLeft(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start, Direction facingFirst) {

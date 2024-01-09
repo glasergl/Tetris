@@ -5,6 +5,9 @@ import java.awt.Dimension;
 import javax.swing.JLabel;
 import standardComponents.Colors;
 
+/**
+ * @author Gabriel Glaser
+ */
 public class TetrisField extends JLabel {
 
 	private static final int SIZE_OF_LABELS = 42;
