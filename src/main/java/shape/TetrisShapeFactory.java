@@ -1,8 +1,9 @@
-package shapes;
+package shape;
 
 import java.awt.Color;
-import shapes.implementations.*;
-import standardComponents.Colors;
+
+import customSwing.Colors;
+import shape.implementation.*;
 import userInterface.TetrisGame;
 
 /**
@@ -11,7 +12,6 @@ import userInterface.TetrisGame;
  * @author Gabriel Glaser
  */
 public final class TetrisShapeFactory {
-
 	public static TetrisShape getRandomTetrisShape(final TetrisGame ofNewTetrisShape) {
 		final Color randomColor = getRandomColor();
 		final Direction randomDirection = Direction.getRandom();
@@ -36,8 +36,7 @@ public final class TetrisShapeFactory {
 		case 6:
 			return Colors.ORANGE;
 		default:
-			// unreachable
-			throw new RuntimeException();
+			throw new RuntimeException(); // not reachable
 		}
 	}
 
@@ -45,45 +44,44 @@ public final class TetrisShapeFactory {
 			final Direction facingFirst) {
 		final int random = (int) (Math.random() * 7);
 		if (random == 0) {
-			final int randomColumn = getRandomColumnForWidth(2);
+			final int randomColumn = getRandomValidColumnForWidth(2);
 			final TetrisLocation start = new TetrisLocation(0, randomColumn);
 			return new Square(ofNewTetrisShape, ofNewShape, start, facingFirst);
 		} else if (random == 1) {
-			final int randomColumn = getRandomColumnForWidth(
+			final int randomColumn = getRandomValidColumnForWidth(
 					facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH ? 3 : 2);
 			final TetrisLocation start = new TetrisLocation(0, randomColumn);
 			return new HalfPlus(ofNewTetrisShape, ofNewShape, start, facingFirst);
 		} else if (random == 2) {
-			final int randomColumn = getRandomColumnForWidth(
+			final int randomColumn = getRandomValidColumnForWidth(
 					facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH ? 1 : 4);
 			final TetrisLocation start = new TetrisLocation(0, randomColumn);
 			return new Line(ofNewTetrisShape, ofNewShape, start, facingFirst);
 		} else if (random == 3) {
-			final int randomColumn = getRandomColumnForWidth(
+			final int randomColumn = getRandomValidColumnForWidth(
 					facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH ? 3 : 2);
 			final TetrisLocation start = new TetrisLocation(0, randomColumn);
-			return new Jay(ofNewTetrisShape, ofNewShape, start, facingFirst);
+			return new MirroredL(ofNewTetrisShape, ofNewShape, start, facingFirst);
 		} else if (random == 4) {
-			final int randomColumn = getRandomColumnForWidth(
+			final int randomColumn = getRandomValidColumnForWidth(
 					facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH ? 3 : 2);
 			final TetrisLocation start = new TetrisLocation(0, randomColumn);
 			return new El(ofNewTetrisShape, ofNewShape, start, facingFirst);
 		} else if (random == 5) {
-			final int randomColumn = getRandomColumnForWidth(
+			final int randomColumn = getRandomValidColumnForWidth(
 					facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH ? 2 : 3);
 			final TetrisLocation start = new TetrisLocation(0, randomColumn);
-			return new SquareToTheRight(ofNewTetrisShape, ofNewShape, start, facingFirst);
+			return new SquareShiftedRight(ofNewTetrisShape, ofNewShape, start, facingFirst);
 		} else {
-			final int randomColumn = getRandomColumnForWidth(
+			final int randomColumn = getRandomValidColumnForWidth(
 					facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH ? 2 : 3);
 			final TetrisLocation start = new TetrisLocation(0, randomColumn);
-			return new SquareToTheLeft(ofNewTetrisShape, ofNewShape, start, facingFirst);
+			return new SquareShiftedLeft(ofNewTetrisShape, ofNewShape, start, facingFirst);
 		}
 
 	}
 
-	private static int getRandomColumnForWidth(final int width) {
+	private static int getRandomValidColumnForWidth(final int width) {
 		return (int) (Math.random() * (TetrisGame.NUMBER_OF_COLUMNS - width));
 	}
-
 }

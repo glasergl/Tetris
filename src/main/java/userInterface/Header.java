@@ -8,7 +8,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import standardComponents.CustomizedSwing;
+
+import customSwing.CustomSwing;
 
 /**
  * Header of the TetrisWindow which contains JComponents to control the
@@ -19,8 +20,8 @@ import standardComponents.CustomizedSwing;
 public final class Header extends JPanel {
 	private final TetrisGame game;
 	private final JPanel right = new JPanel();
-	private final JButton restart = CustomizedSwing.getJButton(Images.RESTART_ICON);
-	private final JButton pauseAndResume = CustomizedSwing.getJButton(Images.PAUSE_ICON);
+	private final JButton restart = CustomSwing.getJButton(Images.RESTART_ICON);
+	private final JButton pauseAndResume = CustomSwing.getJButton(Images.PAUSE_ICON);
 	private boolean isPaused = false;
 
 	public Header(final TetrisGame game) {

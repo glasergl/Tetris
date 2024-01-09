@@ -4,21 +4,23 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import standardComponents.Colors;
+
+import customSwing.Colors;
 
 /**
- * Frame to contain all components to play Tetris.
+ * Frame which contains all components to play Tetris.
  *
  * @author Gabriel Glaser
  */
-public final class TetrisWindow extends JFrame {
-	private static final int SEPERATOR_THICKNESS = 3;
+public final class TetrisFrame extends JFrame {
+	private static final int COMPONENT_MARGIN = 0;
+
 	private final StatTracker stats = new StatTracker();
 	private final TetrisGame game = new TetrisGame(this);
-	private final NextShapes toVisualizeTheNextShapes = new NextShapes(game);
+	private final NextShapes nextShapesVisualization = new NextShapes(game);
 	private final Header header = new Header(game);
 
-	public TetrisWindow() {
+	public TetrisFrame() {
 		super("Tetris");
 		setup();
 		game.requestFocus();
@@ -26,7 +28,7 @@ public final class TetrisWindow extends JFrame {
 	}
 
 	public void start() {
-		game.start(toVisualizeTheNextShapes);
+		game.start(nextShapesVisualization);
 	}
 
 	public void stop() {
@@ -34,7 +36,7 @@ public final class TetrisWindow extends JFrame {
 				JOptionPane.QUESTION_MESSAGE, null, null, null);
 		if (option == JOptionPane.YES_OPTION) {
 			game.reset();
-			game.start(toVisualizeTheNextShapes);
+			game.start(nextShapesVisualization);
 		} else {
 			dispose();
 		}
@@ -48,7 +50,7 @@ public final class TetrisWindow extends JFrame {
 
 	private void setup() {
 		setIconImage(Images.TETRIS_ICON);
-		setLayout(new BorderLayout(SEPERATOR_THICKNESS, SEPERATOR_THICKNESS));
+		setLayout(new BorderLayout(COMPONENT_MARGIN, COMPONENT_MARGIN));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		designTetrisComponents();
@@ -59,16 +61,16 @@ public final class TetrisWindow extends JFrame {
 	}
 
 	private void addAllTetrisComponents() {
-		final Container ofThis = getContentPane();
-		ofThis.add(header, BorderLayout.NORTH);
-		ofThis.add(stats, BorderLayout.WEST);
-		ofThis.add(game, BorderLayout.CENTER);
-		ofThis.add(toVisualizeTheNextShapes, BorderLayout.EAST);
+		final Container contentPane = getContentPane();
+		contentPane.add(header, BorderLayout.NORTH);
+		contentPane.add(stats, BorderLayout.WEST);
+		contentPane.add(game, BorderLayout.CENTER);
+		contentPane.add(nextShapesVisualization, BorderLayout.EAST);
 	}
 
 	private void designTetrisComponents() {
 		header.setBackground(Colors.STANDARD_BACKGROUND_1);
 		stats.setBackground(Colors.STANDARD_BACKGROUND);
-		toVisualizeTheNextShapes.setBackground(Colors.STANDARD_BACKGROUND);
+		nextShapesVisualization.setBackground(Colors.STANDARD_BACKGROUND);
 	}
 }

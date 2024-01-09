@@ -8,14 +8,15 @@ import java.util.Queue;
 import java.util.Set;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.MatteBorder;
-import shapes.TetrisLocation;
-import shapes.TetrisShape;
-import shapes.TetrisShapeFactory;
-import standardComponents.Colors;
-import standardComponents.Fonts;
-import standardComponents.MyLabel;
+
+import customSwing.Colors;
+import customSwing.CustomSwing;
+import shape.TetrisLocation;
+import shape.TetrisShape;
+import shape.TetrisShapeFactory;
 
 /**
  * This class represents numberOfNextShapes TetrisShape's. If a TetrisShape is
@@ -24,14 +25,13 @@ import standardComponents.MyLabel;
  * @author Gabriel Glaser
  */
 public final class NextShapes extends JPanel {
-
 	private static final int DISTANCE_BETWEEN_TITLE_AND_NEXT_SHAPES = 20;
 	private static final int NUMBER_OF_NEXT_SHAPES = 5;
 
 	private final TetrisGame game;
 	private final Queue<TetrisShapeContainer> allNext = new ArrayDeque<>(NUMBER_OF_NEXT_SHAPES);
 	private final JPanel visualisedNextShapes = new JPanel();
-	private final MyLabel title = new MyLabel("Next:");
+	private final JLabel title = CustomSwing.getJLabel("Next:");
 
 	public NextShapes(final TetrisGame game) {
 		super();
@@ -43,7 +43,6 @@ public final class NextShapes extends JPanel {
 		setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 		visualisedNextShapes.setLayout(new BoxLayout(visualisedNextShapes, BoxLayout.Y_AXIS));
 		visualisedNextShapes.add(title);
-		// title.setFont(Fonts.HEADLINE);
 		visualisedNextShapes.add(Box.createVerticalStrut(DISTANCE_BETWEEN_TITLE_AND_NEXT_SHAPES));
 		for (int i = 0; i < NUMBER_OF_NEXT_SHAPES; i++) {
 			addRandomTetrisShape();
@@ -86,9 +85,13 @@ public final class NextShapes extends JPanel {
 		}
 	}
 
+	/**
+	 * JPanel which displays a single TetrisShape with minimal grid size.
+	 * 
+	 * @author Gabriel Glaser
+	 */
 	private class TetrisShapeContainer extends JPanel {
-
-		private TetrisField[][] tetrisShape;
+		private TetrisTile[][] tetrisShape;
 		private final TetrisShape toContain;
 		private int rank;
 		private final int sizeOfBorder = 5;
@@ -96,7 +99,7 @@ public final class NextShapes extends JPanel {
 		public TetrisShapeContainer(final TetrisShape toContain, final int rank) {
 			this.toContain = toContain;
 			this.rank = rank;
-			this.tetrisShape = new TetrisField[toContain.getHeight()][4];
+			this.tetrisShape = new TetrisTile[toContain.getHeight()][4];
 			setLayout(new GridLayout(toContain.getHeight(), 4));
 			updateBorder();
 			setupTetrisFields();
@@ -122,7 +125,7 @@ public final class NextShapes extends JPanel {
 		private void setupTetrisFields() {
 			for (int i = 0; i < tetrisShape.length; i++) {
 				for (int j = 0; j < tetrisShape[i].length; j++) {
-					final TetrisField toAdd = new TetrisField();
+					final TetrisTile toAdd = new TetrisTile();
 					toAdd.setBackground(Colors.STANDARD_BACKGROUND);
 					tetrisShape[i][j] = toAdd;
 					add(toAdd);
@@ -133,11 +136,10 @@ public final class NextShapes extends JPanel {
 		private void drawTetrisShape() {
 			final Set<TetrisLocation> coveredByTheShape = toContain.getCoveredLocations(new TetrisLocation(0, 0));
 			for (final TetrisLocation covered : coveredByTheShape) {
-				final TetrisField toColor = tetrisShape[covered.getRow()][covered.getColumn()];
+				final TetrisTile toColor = tetrisShape[covered.getRow()][covered.getColumn()];
 				toColor.setBackground(toContain.getColor());
 			}
 		}
 
 	}
-
 }

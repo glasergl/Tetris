@@ -1,4 +1,4 @@
-package standardComponents;
+package customSwing;
 
 import java.awt.Color;
 

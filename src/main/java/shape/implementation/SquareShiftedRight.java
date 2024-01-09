@@ -1,19 +1,22 @@
-package shapes.implementations;
+package shape.implementation;
 
 import java.awt.Color;
 import java.util.HashSet;
 import java.util.Set;
-import shapes.Direction;
-import shapes.TetrisLocation;
-import shapes.TetrisShape;
+
+import shape.Direction;
+import shape.TetrisLocation;
+import shape.TetrisShape;
 import userInterface.TetrisGame;
 
 /**
+ * Tetris shape implementation which is shaped like a 2x2 square but the top 2
+ * tiles are shifted right by 1.
+ * 
  * @author Gabriel Glaser
  */
-public final class SquareToTheRight extends TetrisShape {
-
-	public SquareToTheRight(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start,
+public final class SquareShiftedRight extends TetrisShape {
+	public SquareShiftedRight(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start,
 			Direction facingFirst) {
 		super(whereThisShouldSpawn, ofThis, start, facingFirst, 0, 0);
 		if (facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH) {
@@ -41,5 +44,4 @@ public final class SquareToTheRight extends TetrisShape {
 		}
 		return thisWouldCover;
 	}
-
 }

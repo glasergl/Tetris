@@ -6,30 +6,31 @@ import java.util.HashMap;
 import java.util.Set;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import shapes.CannotOverdrawException;
-import shapes.TetrisLocation;
-import shapes.TetrisShape;
-import standardComponents.Colors;
+
+import customSwing.Colors;
+import shape.CannotOverdrawException;
+import shape.TetrisLocation;
+import shape.TetrisShape;
 
 /**
  * @author Gabriel Glaser
  */
 public final class TetrisGame extends JPanel {
-
 	public static final int NUMBER_OF_ROWS = 20;
 	public static final int NUMBER_OF_COLUMNS = 10;
 
-	private final TetrisWindow ofThisGame;
-	private final HashMap<TetrisLocation, TetrisField> labels = new HashMap<>();
+	private final TetrisFrame ofThisGame;
+	private final HashMap<TetrisLocation, TetrisTile> labels = new HashMap<>();
+	private final int initialGameSpeed = 500;
 
 	private TetrisShape currentNext;
 	private TetrisShapeMoveListener ofCurrentNext;
 	private NextShapes toVisualizeTheNextShapes;
 	private int numberOfDeletedRows = 0;
-	private int gameSpeed = 500;
+	private int gameSpeed = initialGameSpeed;
 	private int numberOfShapesFallenDown = 0;
 
-	public TetrisGame(final TetrisWindow ofThisGame) {
+	public TetrisGame(final TetrisFrame ofThisGame) {
 		super();
 		this.ofThisGame = ofThisGame;
 		setBackground(Colors.TETRIS_BACKGROUND);
@@ -76,7 +77,7 @@ public final class TetrisGame extends JPanel {
 			toReset.setBorder(null);
 		}
 		numberOfDeletedRows = 0;
-		gameSpeed = 500;
+		gameSpeed = initialGameSpeed;
 		numberOfShapesFallenDown = 0;
 	}
 
@@ -116,12 +117,12 @@ public final class TetrisGame extends JPanel {
 	}
 
 	public boolean hasColor(final TetrisLocation toTest, final Color toTestIfHasColor) {
-		final TetrisField toTestForColor = labels.get(toTest);
+		final TetrisTile toTestForColor = labels.get(toTest);
 		return toTestForColor.getBackground() == toTestIfHasColor;
 	}
 
 	public void colorLabelWithColor(final TetrisLocation toGetLabelOf, final Color forLabel) throws RuntimeException {
-		final TetrisField toColor = labels.get(toGetLabelOf);
+		final TetrisTile toColor = labels.get(toGetLabelOf);
 		toColor.setBackground(forLabel);
 	}
 
@@ -171,7 +172,7 @@ public final class TetrisGame extends JPanel {
 	private void createTetrisFields() {
 		for (int currentRow = 0; currentRow < NUMBER_OF_ROWS; currentRow++) {
 			for (int currentColumn = 0; currentColumn < NUMBER_OF_COLUMNS; currentColumn++) {
-				final TetrisField label = new TetrisField();
+				final TetrisTile label = new TetrisTile();
 				final TetrisLocation ofLabel = new TetrisLocation(currentRow, currentColumn);
 				labels.put(ofLabel, label);
 				add(label);
@@ -187,5 +188,4 @@ public final class TetrisGame extends JPanel {
 	public int getNumberOfDeletedRows() {
 		return numberOfDeletedRows;
 	}
-
 }

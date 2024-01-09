@@ -8,10 +8,12 @@ import java.util.List;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import standardComponents.Colors;
-import standardComponents.Fonts;
-import standardComponents.MyLabel;
+
+import customSwing.Colors;
+import customSwing.CustomSwing;
+import customSwing.Fonts;
 
 /**
  * Displays a vertical List of Labels which each shows a kind of stat about the
@@ -20,18 +22,17 @@ import standardComponents.MyLabel;
  * @author Gabriel Glaser
  */
 public final class StatTracker extends JPanel {
-
 	private static final int DISTANCE_BETWEEN_TITLE_AND_STATS = 15;
 
-	private final MyLabel title = new MyLabel("Stats:");
-	private final MyLabel score = new MyLabel("Score: 0");
-	private final MyLabel numberOfShapesFallenDown = new MyLabel("Shapes: 0");
-	private final MyLabel gameSpeed = new MyLabel("Speed: 0");
-	private final List<MyLabel> allStats = new ArrayList<>();
+	private final JLabel title = CustomSwing.getJLabel("Stats:");
+	private final JLabel score = CustomSwing.getJLabel("Score: 0");
+	private final JLabel numberOfShapesFallenDown = CustomSwing.getJLabel("Shapes: 0");
+	private final JLabel gameSpeed = CustomSwing.getJLabel("Speed: 0");
+	private final List<JLabel> allStats = new ArrayList<>();
 
 	public StatTracker() {
 		setLayout(new BorderLayout());
-		setPreferredSize(new Dimension(250, 1));
+		setPreferredSize(new Dimension(200, 1));
 		setupComponents();
 	}
 
@@ -80,10 +81,9 @@ public final class StatTracker extends JPanel {
 		super.setBackground(newBackground);
 		if (title != null && allStats != null) {
 			title.setBackground(newBackground);
-			for (final MyLabel stat : allStats) {
+			for (final JLabel stat : allStats) {
 				stat.setBackground(newBackground);
 			}
 		}
 	}
-
 }

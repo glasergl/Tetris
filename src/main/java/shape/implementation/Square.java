@@ -1,14 +1,17 @@
-package shapes.implementations;
+package shape.implementation;
 
 import java.awt.Color;
 import java.util.HashSet;
 import java.util.Set;
-import shapes.Direction;
-import shapes.TetrisLocation;
-import shapes.TetrisShape;
+
+import shape.Direction;
+import shape.TetrisLocation;
+import shape.TetrisShape;
 import userInterface.TetrisGame;
 
 /**
+ * Tetris shape implementation which is shaped like a 2x2 square.
+ * 
  * @author Gabriel Glaser
  */
 public final class Square extends TetrisShape {

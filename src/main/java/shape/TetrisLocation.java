@@ -1,15 +1,16 @@
-package shapes;
+package shape;
 
 import java.util.Objects;
 import userInterface.TetrisGame;
 
 /**
+ * Location on the whole Tetris field which is a rectangular grid. Regarding
+ * TetrisShapes, its location usually defines the upper left corner of it.
+ * 
  * @author Gabriel Glaser
  */
 public final class TetrisLocation {
-
 	private final int row;
-
 	private final int column;
 
 	public TetrisLocation(final int row, final int column) {
@@ -47,5 +48,4 @@ public final class TetrisLocation {
 	public String toString() {
 		return "(" + row + ", " + column + ")";
 	}
-
 }

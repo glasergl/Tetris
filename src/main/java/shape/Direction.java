@@ -1,6 +1,9 @@
-package shapes;
+package shape;
 
 /**
+ * Enum for celestial directions. Used to defined an orientation of Tetris
+ * shapes such that they can be rotated.
+ * 
  * @author Gabriel Glaser
  */
 public enum Direction {
@@ -17,7 +20,7 @@ public enum Direction {
 		case WEST:
 			return Direction.SOUTH;
 		default:
-			throw new RuntimeException("No left found for " + this);
+			throw new RuntimeException(); // unreachable
 		}
 	}
 
@@ -32,7 +35,22 @@ public enum Direction {
 		case WEST:
 			return Direction.NORTH;
 		default:
-			throw new RuntimeException("No right found for " + this);
+			throw new RuntimeException(); // unreachable
+		}
+	}
+
+	public boolean isOrthogonalTo(final Direction toTest) {
+		switch (this) {
+		case NORTH:
+			return toTest == Direction.EAST || toTest == Direction.WEST;
+		case EAST:
+			return toTest == Direction.NORTH || toTest == Direction.SOUTH;
+		case SOUTH:
+			return toTest == Direction.EAST || toTest == Direction.WEST;
+		case WEST:
+			return toTest == Direction.NORTH || toTest == Direction.SOUTH;
+		default:
+			throw new RuntimeException(); // not reachable
 		}
 	}
 
@@ -48,24 +66,7 @@ public enum Direction {
 		case 3:
 			return WEST;
 		default:
-			// not reachable
-			throw new RuntimeException();
-		}
-	}
-
-	public boolean isOrthogonalTo(final Direction toTest) {
-		switch (this) {
-		case NORTH:
-			return toTest == Direction.EAST || toTest == Direction.WEST;
-		case EAST:
-			return toTest == Direction.NORTH || toTest == Direction.SOUTH;
-		case SOUTH:
-			return toTest == Direction.EAST || toTest == Direction.WEST;
-		case WEST:
-			return toTest == Direction.NORTH || toTest == Direction.SOUTH;
-		default:
-			// not reachable
-			throw new RuntimeException();
+			throw new RuntimeException(); // not reachable
 		}
 	}
 }
