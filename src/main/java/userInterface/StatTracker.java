@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 
 import customSwing.Colors;
 import customSwing.CustomSwing;
-import customSwing.Fonts;
 
 /**
  * Displays a vertical List of Labels which each shows a kind of stat about the
@@ -43,7 +42,7 @@ public final class StatTracker extends JPanel {
 	}
 
 	private void setupTitle() {
-		title.setFont(Fonts.HEADLINE);
+		title.setFont(CustomSwing.HEADLINE_FONT);
 		add(title, BorderLayout.NORTH);
 	}
 
