@@ -1,6 +1,8 @@
 package main;
 
 import javax.swing.SwingUtilities;
+
+import standardGlaserGl.errors.DefaultErrorHandling;
 import userInterface.TetrisFrame;
 
 /**
@@ -15,6 +17,7 @@ public final class Main {
 	 * @param args - unused
 	 */
 	public static void main(String[] args) {
+		DefaultErrorHandling.activateDefaultExceptionHandling();
 		SwingUtilities.invokeLater(() -> {
 			new TetrisFrame();
 		});
