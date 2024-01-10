@@ -11,6 +11,8 @@ import java.awt.RenderingHints;
 import javax.swing.border.AbstractBorder;
 
 /**
+ * Border which makes a TetrisTile look 3D.
+ * 
  * @author Someone from StackOverflow
  */
 public class TetrisFieldBorder extends AbstractBorder {

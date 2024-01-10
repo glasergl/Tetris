@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
+ * Factory class which returns the needed JComponents with default attributes.
+ * 
  * @author Gabriel Glaser
  */
 public class CustomSwing {

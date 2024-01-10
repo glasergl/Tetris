@@ -50,6 +50,9 @@ public final class NextShapes extends JPanel {
 		add(visualisedNextShapes);
 	}
 
+	/**
+	 * @return The TetrisShape with the lowest rank.
+	 */
 	public TetrisShape removeNext() {
 		final TetrisShapeContainer next = allNext.remove();
 		visualisedNextShapes.remove(next);
@@ -86,7 +89,8 @@ public final class NextShapes extends JPanel {
 	}
 
 	/**
-	 * JPanel which displays a single TetrisShape with minimal grid size.
+	 * JPanel which displays a single TetrisShape with minimal grid size. Rank
+	 * represents the order in which they are removed by calling "removeNext()".
 	 * 
 	 * @author Gabriel Glaser
 	 */
@@ -140,6 +144,5 @@ public final class NextShapes extends JPanel {
 				toColor.setBackground(toContain.getColor());
 			}
 		}
-
 	}
 }

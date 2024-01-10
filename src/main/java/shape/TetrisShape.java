@@ -16,6 +16,7 @@ public abstract class TetrisShape {
 	protected final TetrisGame game;
 	protected final Color color;
 	protected final int gameSpeed;
+
 	protected TetrisLocation currentLocation;
 	protected Direction currentDirection;
 	protected int width;
@@ -59,6 +60,11 @@ public abstract class TetrisShape {
 		return getCoveredLocations(currentLocation, currentDirection);
 	}
 
+	/**
+	 * Starts a timer which updates the position of this shape at every call at a
+	 * speed depending on the game speed. The position is updated such that the this
+	 * shape falls downwards.
+	 */
 	public void sinkAsMuchAsPossible() {
 		sinkTimer = new Timer(gameSpeed, null);
 		sinkTimer.addActionListener((click) -> {
@@ -72,12 +78,18 @@ public abstract class TetrisShape {
 		sinkTimer.start();
 	}
 
+	/**
+	 * Pauses the timer such that the shape stops sinking.
+	 */
 	public void pause() {
 		if (sinkTimer != null) {
 			sinkTimer.stop();
 		}
 	}
 
+	/**
+	 * Resumes the timer such that the shape continues sinking.
+	 */
 	public void resume() {
 		if (sinkTimer != null) {
 			sinkTimer.start();
@@ -191,6 +203,13 @@ public abstract class TetrisShape {
 		}
 	}
 
+	/**
+	 * Removes this shape from the game by setting the color of its covered
+	 * positions to the background.
+	 * 
+	 * @param toDeleteThisAt
+	 * @param facing
+	 */
 	private void delete(final TetrisLocation toDeleteThisAt, final Direction facing) {
 		final Set<TetrisLocation> covered = getCoveredLocations(toDeleteThisAt, facing);
 		for (final TetrisLocation toDelete : covered) {

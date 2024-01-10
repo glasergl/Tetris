@@ -19,7 +19,7 @@ import customSwing.CustomSwing;
  */
 public final class Header extends JPanel {
 	private final TetrisGame game;
-	private final JPanel right = new JPanel();
+	private final JPanel rightAlignedContainer = new JPanel();
 	private final JButton restart = CustomSwing.getJButton(Images.RESTART_ICON);
 	private final JButton pauseAndResume = CustomSwing.getJButton(Images.PAUSE_ICON);
 	private boolean isPaused = false;
@@ -38,17 +38,17 @@ public final class Header extends JPanel {
 	}
 
 	private void setupContainer() {
-		right.setLayout(new FlowLayout(FlowLayout.RIGHT));
-		right.add(restart);
-		right.add(pauseAndResume);
-		add(right, BorderLayout.EAST);
+		rightAlignedContainer.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		rightAlignedContainer.add(restart);
+		rightAlignedContainer.add(pauseAndResume);
+		add(rightAlignedContainer, BorderLayout.EAST);
 	}
 
 	@Override
 	public void setBackground(final Color newBackground) {
 		super.setBackground(newBackground);
-		if (right != null) {
-			right.setBackground(newBackground);
+		if (rightAlignedContainer != null) {
+			rightAlignedContainer.setBackground(newBackground);
 			restart.setBackground(newBackground);
 			pauseAndResume.setBackground(newBackground);
 		}

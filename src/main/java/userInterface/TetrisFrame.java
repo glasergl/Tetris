@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import customSwing.Colors;
 
 /**
- * Frame which contains all components to play Tetris.
+ * Frame which ecapsulates all components to play Tetris.
  *
  * @author Gabriel Glaser
  */
