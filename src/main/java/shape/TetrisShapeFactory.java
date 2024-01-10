@@ -66,7 +66,7 @@ public final class TetrisShapeFactory {
 			final int randomColumn = getRandomValidColumnForWidth(
 					facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH ? 3 : 2);
 			final TetrisLocation start = new TetrisLocation(0, randomColumn);
-			return new El(ofNewTetrisShape, ofNewShape, start, facingFirst);
+			return new L(ofNewTetrisShape, ofNewShape, start, facingFirst);
 		} else if (random == 5) {
 			final int randomColumn = getRandomValidColumnForWidth(
 					facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH ? 2 : 3);

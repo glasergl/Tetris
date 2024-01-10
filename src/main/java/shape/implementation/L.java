@@ -14,8 +14,8 @@ import userInterface.TetrisGame;
  * 
  * @author Gabriel Glaser
  */
-public final class El extends TetrisShape {
-	public El(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start, Direction facingFirst) {
+public final class L extends TetrisShape {
+	public L(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start, Direction facingFirst) {
 		super(whereThisShouldSpawn, ofThis, start, facingFirst, 0, 0);
 		if (facingFirst == Direction.NORTH || facingFirst == Direction.SOUTH) {
 			width = 3;
