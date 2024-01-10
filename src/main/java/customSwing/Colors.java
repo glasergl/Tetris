@@ -6,7 +6,7 @@ import java.awt.Color;
  * @author Gabriel Glaser
  */
 public final class Colors {
-	public static final Color STANDARD_FOREGROUND = Color.WHITE;
+	public static final Color TEXT_COLOR = Color.WHITE;
 	public static final Color TETRIS_BACKGROUND = Color.BLACK;
 	public static final Color STANDARD_BACKGROUND = new Color(47, 49, 54);
 	public static final Color STANDARD_BACKGROUND_1 = new Color(32, 34, 37);

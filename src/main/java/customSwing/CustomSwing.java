@@ -23,7 +23,7 @@ public class CustomSwing {
 		final JLabel jLabel = new JLabel(labelText);
 		jLabel.setOpaque(true);
 		jLabel.setFont(TEXT_FONT);
-		jLabel.setForeground(Colors.STANDARD_FOREGROUND);
+		jLabel.setForeground(Colors.TEXT_COLOR);
 		return jLabel;
 	}
 }
