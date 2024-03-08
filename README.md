@@ -19,6 +19,3 @@ D  | Move current shape right
 1. Install [https://github.com/glasergl/StandardGlaserGl](https://github.com/glasergl/StandardGlaserGl).
 2. Run `mvn package` in a console opened in the cloned repository of this.
 3. The `target` folder contains a `.exe` which needs to be executed to start with a game of Tetris.
-
-## Notes
-- Windows will likely flag the `.exe` as not trustable. Therefore, in order to correctly run it, it needs to have administrative rights.
