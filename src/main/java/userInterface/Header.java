@@ -14,8 +14,6 @@ import customSwing.CustomSwing;
 /**
  * Header of the TetrisWindow which contains JComponents to control the
  * TetrisGame.
- *
- * @author Gabriel Glaser
  */
 public final class Header extends JPanel {
 	private final TetrisGame game;

@@ -3,7 +3,7 @@ package customSwing;
 import java.awt.Color;
 
 /**
- * @author Gabriel Glaser
+ * Hardcoded colors
  */
 public final class Colors {
 	public static final Color TEXT_COLOR = Color.WHITE;

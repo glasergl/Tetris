@@ -8,8 +8,6 @@ import javax.swing.JLabel;
 
 /**
  * Factory class which returns the needed JComponents with default attributes.
- * 
- * @author Gabriel Glaser
  */
 public class CustomSwing {
 	public static final Font HEADLINE_FONT = new Font(Font.MONOSPACED, Font.BOLD, 35);

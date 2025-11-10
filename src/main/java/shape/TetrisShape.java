@@ -9,8 +9,6 @@ import userInterface.TetrisGame;
 
 /**
  * Parent-class of all TetrisShapes.
- * 
- * @author Gabriel Glaser
  */
 public abstract class TetrisShape {
 	protected final TetrisGame game;

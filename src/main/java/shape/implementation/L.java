@@ -11,8 +11,6 @@ import userInterface.TetrisGame;
 
 /**
  * Tetris shape implementation which is shaped like an "L".
- * 
- * @author Gabriel Glaser
  */
 public final class L extends TetrisShape {
 	public L(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start, Direction facingFirst) {

@@ -11,8 +11,6 @@ import userInterface.TetrisGame;
 
 /**
  * Tetris shape implementation which is shaped like a vertically mirrored "L".
- * 
- * @author Gabriel Glaser
  */
 public class MirroredL extends TetrisShape {
 

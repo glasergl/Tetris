@@ -12,8 +12,6 @@ import userInterface.TetrisGame;
 /**
  * Tetris shape implementation which is shaped like a 2x2 square, but the top 2
  * tiles are shifted by 1 to the left.
- * 
- * @author Gabriel Glaser
  */
 public final class SquareShiftedLeft extends TetrisShape {
 	public SquareShiftedLeft(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start, Direction facingFirst) {

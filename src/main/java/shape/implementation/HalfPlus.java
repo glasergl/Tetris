@@ -12,8 +12,6 @@ import userInterface.TetrisGame;
 /**
  * Tetris shape implementation which is shaped like an half plus, i.e., 3 tiles
  * in a line and one addition appended at one side at the middle tile.
- * 
- * @author Gabriel Glaser
  */
 public final class HalfPlus extends TetrisShape {
 	public HalfPlus(final TetrisGame whereThisShouldSpawn, final Color ofThis, final TetrisLocation start,

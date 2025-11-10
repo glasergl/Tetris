@@ -8,9 +8,6 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-/**
- * @author Gabriel Glaser
- */
 public final class Images {
 	private static final int ICON_SIZE = 35;
 	public static final Image TETRIS_ICON = getImage("Tetris_Icon.png");

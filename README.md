@@ -16,6 +16,5 @@ D  | Move current shape right
 -> | Turn shape 90° clockwise
 
 ## Build
-1. Install [https://github.com/glasergl/StandardGlaserGl](https://github.com/glasergl/StandardGlaserGl).
-2. Run `mvn package` in a console opened in the cloned repository of this.
-3. The `target` folder contains a `.exe` which needs to be executed to start with a game of Tetris.
+1. Run `mvn package` in a console opened in the cloned repository of this
+1. The `target` folder contains a `.exe` which starts a game of Tetris

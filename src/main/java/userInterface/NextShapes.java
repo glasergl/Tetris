@@ -21,8 +21,6 @@ import shape.TetrisShapeFactory;
 /**
  * This class represents numberOfNextShapes TetrisShape's. If a TetrisShape is
  * removed, a random TetrisShape is added.
- * 
- * @author Gabriel Glaser
  */
 public final class NextShapes extends JPanel {
 	private static final int DISTANCE_BETWEEN_TITLE_AND_NEXT_SHAPES = 20;

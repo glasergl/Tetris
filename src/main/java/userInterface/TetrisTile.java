@@ -10,8 +10,6 @@ import customSwing.Colors;
 /**
  * Single tile for the whole Tetris grid. Some part of a Tetris shape may lie on
  * this tile or not.
- * 
- * @author Gabriel Glaser
  */
 public class TetrisTile extends JLabel {
 	private static final int SIZE_OF_SINGLE_TETRIS_TILE = 42;

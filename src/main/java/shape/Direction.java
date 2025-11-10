@@ -3,8 +3,6 @@ package shape;
 /**
  * Enum for celestial directions. Used to defined an orientation of Tetris
  * shapes such that they can be rotated.
- * 
- * @author Gabriel Glaser
  */
 public enum Direction {
 	NORTH, EAST, SOUTH, WEST;

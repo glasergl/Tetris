@@ -9,8 +9,6 @@ import customSwing.Colors;
 
 /**
  * Frame which ecapsulates all components to play Tetris.
- *
- * @author Gabriel Glaser
  */
 public final class TetrisFrame extends JFrame {
 	private static final int COMPONENT_MARGIN = 0;

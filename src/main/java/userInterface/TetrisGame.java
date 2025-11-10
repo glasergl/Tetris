@@ -17,8 +17,6 @@ import shape.TetrisShape;
  * Furthermore, implements the functionality of the goal of the game which is
  * having a full row filled with tiles of any color. If this happens, the row is
  * removed and everything above falls down as much as possible.
- * 
- * @author Gabriel Glaser
  */
 public final class TetrisGame extends JPanel {
 	public static final int NUMBER_OF_ROWS = 20;

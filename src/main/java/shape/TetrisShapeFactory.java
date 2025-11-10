@@ -8,8 +8,6 @@ import userInterface.TetrisGame;
 
 /**
  * Class to create random TetrisShapes.
- *
- * @author Gabriel Glaser
  */
 public final class TetrisShapeFactory {
 	public static TetrisShape getRandomTetrisShape(final TetrisGame ofNewTetrisShape) {

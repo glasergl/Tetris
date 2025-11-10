@@ -8,8 +8,6 @@ import shape.TetrisShape;
 /**
  * KeyListener implementation which allows controlling the given TetrisShape
  * with respect to position and orientation.
- * 
- * @author Gabriel Glaser
  */
 public final class TetrisShapeMoveListener implements KeyListener {
 	private final TetrisShape tetrisShapeToControl;

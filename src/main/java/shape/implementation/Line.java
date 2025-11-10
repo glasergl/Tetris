@@ -9,9 +9,6 @@ import shape.TetrisLocation;
 import shape.TetrisShape;
 import userInterface.TetrisGame;
 
-/**
- * @author Gabriel Glaser
- */
 public final class Line extends TetrisShape {
 	public Line(TetrisGame whereThisShouldSpawn, Color ofThis, TetrisLocation start, Direction facingFirst) {
 		super(whereThisShouldSpawn, ofThis, start, facingFirst, 0, 0);

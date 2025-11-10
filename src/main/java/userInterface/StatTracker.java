@@ -17,8 +17,6 @@ import customSwing.CustomSwing;
 /**
  * Displays a vertical List of Labels which each shows a kind of stat about the
  * TetrisGame.
- *
- * @author Gabriel Glaser
  */
 public final class StatTracker extends JPanel {
 	private static final int DISTANCE_BETWEEN_TITLE_AND_STATS = 15;

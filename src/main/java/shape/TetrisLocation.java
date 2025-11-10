@@ -6,8 +6,6 @@ import userInterface.TetrisGame;
 /**
  * Location on the whole Tetris field which is a rectangular grid. Regarding
  * TetrisShapes, its location usually defines the upper left corner of it.
- * 
- * @author Gabriel Glaser
  */
 public final class TetrisLocation {
 	private final int row;
